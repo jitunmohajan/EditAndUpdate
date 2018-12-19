@@ -15,4 +15,5 @@
 Route::get('/','HomeController@addpost');
 Route::post('savepost','HomeController@savepost');
 Route::get('allpost','HomeController@allpost');
+Route::get('edit/{id}','HomeController@edit');
 

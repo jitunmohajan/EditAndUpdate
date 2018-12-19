@@ -1,6 +1,20 @@
 @extends('backend.layout')
 @section('content')
       <div class="card-body">
+
+
+{{--_____________Success massege__________________--}}
+    <div class="alert-success"> 
+        <?php
+          $message = Session::get('message');
+          if ($message)
+            echo $message;
+            Session::put('message',null)
+        ?>        
+      </div>
+{{--_____________Success massege__________________--}}
+  
+
             <form id="signup-form" class="signup-form" method="post" action="{{ URL::to('savepost') }}">
                 {{csrf_field()}}
                 <div class="form-row">
@@ -19,4 +33,5 @@
                 <button type="submit" class="btn btn-primary">Add</button>
               </form>
             </div>
+
 @stop
