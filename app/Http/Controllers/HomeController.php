@@ -33,6 +33,18 @@ class HomeController extends Controller
        
         return view('frontend.edit',['data'=>$sample]);
     }
+    public function update(Request $req,$id){
+       
+        $obj = Sample::find($id);       
+        $obj->title = $req->title;
+        $obj->description = $req->description;
+         if($obj->save())
+        {
+             Session::put('message', 'Successfully Registered...!!');
+            return redirect('allpost');
+        }
+       // return view('frontend.edit',['data'=>$sample]);
+    }
 
 }
 

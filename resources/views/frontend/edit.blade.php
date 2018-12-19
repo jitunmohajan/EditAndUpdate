@@ -3,7 +3,7 @@
       <div class="card-body">
 
 
-            <form id="signup-form" class="signup-form" method="post" action="{{ URL::to('savepost') }}">
+            <form id="signup-form" class="signup-form" method="post" action="{{ URL::to('update',['id'=>$data->id]) }}">
                 {{csrf_field()}}
                  <div class="form-row">
                   <div class="form-group col-md-6">
