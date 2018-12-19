@@ -40,10 +40,16 @@ class HomeController extends Controller
         $obj->description = $req->description;
          if($obj->save())
         {
-             Session::put('message', 'Successfully Registered...!!');
+             //Session::put('message', 'Successfully Updated...!!');
             return redirect('allpost');
         }
        // return view('frontend.edit',['data'=>$sample]);
+    }
+    public function del($id){
+       
+        $sample = Sample::find($id)->delete();       
+       
+         return redirect('allpost');
     }
 
 }
